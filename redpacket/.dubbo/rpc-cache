@@ -1,0 +1,4 @@
+#Dubbo Registry Cache
+#Sat Oct 05 14:46:29 CST 2019
+com.zoro.redpacket.api.RedPacketTradeOrderService=empty\://169.254.168.23\:2880/com.zoro.redpacket.api.RedPacketTradeOrderService?anyhost\=true&application\=dubbo-redpacket&category\=configurators&check\=false&default.proxy\=tccJavassist&dubbo\=2.5.3&interface\=com.zoro.redpacket.api.RedPacketTradeOrderService&methods\=record&payload\=52428800&pid\=11856&retries\=3&side\=provider&timeout\=60000&timestamp\=1570257979791
+com.zoro.redpacket.api.RedPacketAccountService=empty\://169.254.168.23\:2880/com.zoro.redpacket.api.RedPacketAccountService?anyhost\=true&application\=dubbo-redpacket&category\=configurators&check\=false&default.proxy\=tccJavassist&dubbo\=2.5.3&interface\=com.zoro.redpacket.api.RedPacketAccountService&methods\=getRedPacketAccountByUserId&payload\=52428800&pid\=11856&retries\=3&side\=provider&timeout\=60000&timestamp\=1570257989670

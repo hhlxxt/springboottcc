@@ -1,0 +1,17 @@
+server:
+  port: 8081
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/tcc_cap?useSSL=false&serverTimezone=UTC
+    username: root
+    password:
+
+logging:
+  level:
+    org:
+      mengyun:
+        tcctransaction:
+          recover: debug
+    com :
+      zoro:
+        Mapper : debug

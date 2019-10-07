@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans        http://www.springframework.org/schema/beans/spring-beans.xsd        http://code.alibabatech.com/schema/dubbo        http://code.alibabatech.com/schema/dubbo/dubbo.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <dubbo:application name="sample-dubbo-capital"/>
+
+    <context:property-placeholder location="classpath:dubbo-capital.properties"
+                                  ignore-unresolvable="true"/>
+
+    <dubbo:registry id="capitalRpcZk" protocol="zookeeper" register="true" subscribe="false"
+                    address="${zookeeper.address}" session="${zookeeper.session.timeout}"
+                    timeout="${zookeeper.connect.timeout}" />
+
+
+    <dubbo:protocol name="dubbo"  port="${dubbo.port}" payload="52428800" />
+
+    <dubbo:service interface="com.zoro.captial.api.CapitalTradeOrderService"
+                   registry="capitalRpcZk"
+                   ref="capitalTradeOrderService" timeout="1000" retries="3"/>
+    <dubbo:service interface="com.zoro.captial.api.CapitalAccountService"
+                   registry="capitalRpcZk"
+                   ref="capitalAccountService" timeout="1000" retries="3"/>
+
+
+</beans>
